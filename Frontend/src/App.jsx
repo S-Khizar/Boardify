@@ -5,6 +5,7 @@ import HotelList from './components/HotelList'
 import MainAdmin from './components/MainAdmin'
 import HotelLandingPage from './components/HotelLandingPage'
 import GuestAdminLogin from './components/GuestAdminLogin'
+import Navbar from './components/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +13,7 @@ function App() {
   return (
    <>
    <BrowserRouter>
+   <Navbar/>
     <Routes>
       <Route path='/mainadminlogin' element={<MainAdmin/>}/>
       <Route path='/guestadminlogin' element={<GuestAdminLogin/>} />

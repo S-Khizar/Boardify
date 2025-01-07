@@ -4,10 +4,11 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const mongoURL= process.env.MONGO_URL
+const mongoURL= process.env.MONGO_URL_HOST
 
 
-mongoose.connect(mongoURL);
+
+mongoose.connect(mongoURL , { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db=mongoose.connection;
 
@@ -28,3 +29,6 @@ db.on('disconnected',()=>{
 
 
 export default db;
+
+
+
