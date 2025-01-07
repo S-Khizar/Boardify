@@ -71,18 +71,18 @@ const Navbar = () => {
             Guest Admin
           </Link>
           <Link
-            to="/guestadminlogin"
+            to="//mainadminlogin"
             className="text-white py-2 hover:underline"
             onClick={() => setIsMenuOpen(false)}
           >
-            Guest Admin
+            Main Admin
           </Link>
           <Link
-            to="/guestadminlogin"
+            to="/"
             className="text-white py-2 hover:underline"
             onClick={() => setIsMenuOpen(false)}
           >
-            Guest Admin
+            Guest Login
           </Link>
         </nav>
       )}

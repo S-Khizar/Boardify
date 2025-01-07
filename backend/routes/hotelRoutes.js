@@ -38,7 +38,7 @@ router.post("/upload", upload.single("file"), async (req, res) => {
 
         await hotel.save();
 
-        const hotelInfo = `http://localhost:5173/hotels/${hotel._id}`; 
+        const hotelInfo = `${process.env.FRONTEND_URL}/hotels/${hotel._id}`; 
         const qrCodePath = path.join('uploads', `${hotel._id}-qrcode.png`);
 
         
@@ -47,7 +47,7 @@ router.post("/upload", upload.single("file"), async (req, res) => {
                 return res.status(500).json({ error: "Failed to generate QR code" });
             }
 
-            hotel.qrCodeURL = `http://localhost:3000/${qrCodePath}`;
+            hotel.qrCodeURL = `${process.env.BACKEND_URL}/${qrCodePath}`;
 
 
             
@@ -57,7 +57,7 @@ router.post("/upload", upload.single("file"), async (req, res) => {
                         message: "File uploaded successfully",
                         hotel: {
                             ...hotel.toObject(),
-                            fileURL: `http://localhost:3000/${hotel.logofileupload.path}`, 
+                            fileURL: `${process.env.BACKEND_URL}/${hotel.logofileupload.path}`, 
                             qrCodeURL: hotel.qrCodeURL, 
                         }
                     });
