@@ -10,7 +10,7 @@ const AllGuests = () => {
 
   useEffect(() => {
     axios
-      .get(`api/guest/allguest`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/guest/allguest`)
       .then((response) => {
         setGuests(response.data);
         setLoading(false);
@@ -119,7 +119,6 @@ const AllGuests = () => {
             </tbody>
           </table>
 
-          {/* Edit Guest Form */}
           {editGuest && (
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
               <h3 className="text-xl font-semibold text-gray-800">Edit Guest</h3>
