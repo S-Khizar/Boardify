@@ -10,7 +10,7 @@ const AllGuests = () => {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/guest/allguest`)
+      .get(`api/guest/allguest`)
       .then((response) => {
         setGuests(response.data);
         setLoading(false);

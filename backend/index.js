@@ -7,6 +7,7 @@ import guestRoutes from './routes/Guestroutes.js'
 const app = express();
 
 app.use(cors());
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
